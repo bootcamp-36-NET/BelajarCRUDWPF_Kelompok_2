@@ -1,0 +1,19 @@
+E:\Rio\bootcamp\HR WPF\HR WPF\bin\Debug\HR WPF.exe.config
+E:\Rio\bootcamp\HR WPF\HR WPF\bin\Debug\HR WPF.exe
+E:\Rio\bootcamp\HR WPF\HR WPF\bin\Debug\HR WPF.pdb
+E:\Rio\bootcamp\HR WPF\HR WPF\bin\Debug\EntityFramework.dll
+E:\Rio\bootcamp\HR WPF\HR WPF\bin\Debug\EntityFramework.SqlServer.dll
+E:\Rio\bootcamp\HR WPF\HR WPF\bin\Debug\EntityFramework.xml
+E:\Rio\bootcamp\HR WPF\HR WPF\bin\Debug\EntityFramework.SqlServer.xml
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\HR WPF.csprojResolveAssemblyReference.cache
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\MainWindow.g.cs
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\App.g.cs
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\HR WPF_MarkupCompile.cache
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\HR WPF_MarkupCompile.lref
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\MainWindow.baml
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\HR WPF.g.resources
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\HR_WPF.Properties.Resources.resources
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\HR WPF.csproj.GenerateResource.Cache
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\HR WPF.exe
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\HR WPF.pdb
+E:\Rio\bootcamp\HR WPF\HR WPF\obj\Debug\HR_WPF.Migrations.InitTable.resources
