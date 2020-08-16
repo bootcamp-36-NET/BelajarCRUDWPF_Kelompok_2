@@ -22,9 +22,8 @@ namespace TUGASWPF.Models
         { 
             this.Name = name;
         }
-        public Supplier(int id, string name, DateTime joinDate)
-        {
-            this.Id = id;
+        public Supplier(string name, DateTime? joinDate)
+        { 
             this.Name = name;
             this.JoinDate = joinDate;
         }

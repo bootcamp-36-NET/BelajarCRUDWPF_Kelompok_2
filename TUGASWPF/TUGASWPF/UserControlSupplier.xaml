@@ -56,14 +56,20 @@
             <StackPanel>
                 <TextBox x:Name="txtName" materialDesign:HintAssist.Hint="Supplier Name" PreviewTextInput="txtName_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,270,0,152" HorizontalAlignment="Left" Width="350" SelectionBrush="Black" Foreground="#FF363636"  />
             </StackPanel>
-            <StackPanel>
-                <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Center" VerticalAlignment="Top" Width="88" Background="#FF363636" Margin="190,330,10,216" Click="btnRefresh_Click"/>
+            <StackPanel Orientation="Vertical"> 
+                <DatePicker x:Name="DpJoinDate" Margin="96,330,81,216" Text="Date" Foreground="Black"></DatePicker>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="130,330,0,216" VerticalAlignment="Top" Width="88" Click="btnUpdate_Click" Background="#FF363636" />
+                <TextBlock Text="Join Date  " Margin="10,330,361,216" FontSize="16" Foreground="#FF363636"></TextBlock>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnInsert" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Click="btnInsert_Click" Background="#FF363636" Margin="10,330,200,216"/>
+                <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Center" VerticalAlignment="Top" Width="88" Background="#FF363636" Margin="266,370,85,216" Click="btnRefresh_Click"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="130,370,0,216" VerticalAlignment="Top" Width="88" Click="btnUpdate_Click" Background="#FF363636" />
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="btnInsert" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Click="btnInsert_Click" Background="#FF363636" Margin="10,370,0,216"/>
             </StackPanel>
 
         </Grid>

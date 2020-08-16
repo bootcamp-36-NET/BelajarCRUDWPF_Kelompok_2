@@ -32,7 +32,7 @@
         <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" Background="White" >
             <TextBlock Text="Wellcome Bruh!!" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black"></TextBlock>
         </Grid>
-        <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF363636">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
@@ -42,7 +42,7 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Design com WPF</TextBlock>
 
         </Grid>
-        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF31577E">
+        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF363636">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
             </Grid.Effect>
@@ -68,25 +68,25 @@
                 <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem x:Name="Supplier" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Person" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="Person" Height="25" Width="25" Margin="10" Foreground="White"/>
                             <TextBlock Text="Supplier" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Item" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="GearBox" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="GearBox" Height="25" Width="25" Margin="10" Foreground="White"/>
                             <TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10" Foreground="White"/>
                             <TextBlock Text="Tickets" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10" Foreground="White"/>
                             <TextBlock Text="Messages" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>

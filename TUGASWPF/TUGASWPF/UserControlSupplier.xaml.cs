@@ -45,7 +45,7 @@ namespace TUGASWPF
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        var input = new Supplier(txtName.Text);
+                        var input = new Supplier(txtName.Text, DpJoinDate.SelectedDate);
                         myContext.Suppliers.Add(input);
                         myContext.SaveChanges();
                         MessageBox.Show("1 row has benn inserted");
@@ -116,6 +116,7 @@ namespace TUGASWPF
                 var supplier = dgSupplier.SelectedItem as Supplier;
                 txtName.Text = supplier.Name;
                 txtId.Text = Convert.ToString(supplier.Id);
+                DpJoinDate.SelectedDate = supplier.JoinDate; 
             }
         }
 
