@@ -1,4 +1,4 @@
-# TUGAS APP WPF KELOMPOK 2
+# TUGAS WPF KELOMPOK 2
 
 ### Tugas:
 - CRUD buat 4 tabel
