@@ -39,8 +39,7 @@
             <Button HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click">
                 <materialDesign:PackIcon Kind="Power"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Design com WPF</TextBlock>
-
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Tugas WPF Bootcamp .Net</TextBlock> 
         </Grid>
         <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF363636">
             <Grid.Effect>
