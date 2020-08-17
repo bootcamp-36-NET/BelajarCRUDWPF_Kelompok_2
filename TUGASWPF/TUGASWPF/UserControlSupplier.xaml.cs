@@ -86,11 +86,18 @@ namespace TUGASWPF
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Are you sure want to delete this data ?", "Delete Arlet!!!", MessageBoxButton.YesNo);
-            var ii = Convert.ToInt32(txtId.Text); 
+            var ii = Convert.ToInt32(txtId.Text);
+            var items = myContext.Item.Where(I => I.Supplier.Id == ii).ToList();
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    
+                    foreach (Item i in items)
+                    {
+                        int iid = i.Id;
+                        var item = myContext.Item.Find(iid);
+                        myContext.Item.Remove(item);
+                        myContext.SaveChanges();
+                    }
                     int Id = Convert.ToInt32(txtId.Text);
                     var supplier = myContext.Suppliers.Find(Id);
                     myContext.Suppliers.Remove(supplier);

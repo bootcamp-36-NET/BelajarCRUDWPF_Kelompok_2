@@ -22,11 +22,14 @@ namespace TUGASWPF
     /// </summary>
     public partial class UserControlItem : UserControl
     {
+
         MyContext myContext = new MyContext();
+        int cbSupp;
         public UserControlItem()
         {
             InitializeComponent();
-            dgItem.ItemsSource = myContext.Item.ToList(); 
+            dgItem.ItemsSource = myContext.Item.ToList();
+            cbSupplier.ItemsSource = myContext.Suppliers.ToList();
         }
 
         private void clearText()
@@ -34,8 +37,7 @@ namespace TUGASWPF
             txtId.Clear();
             txtName.Clear();
             txtPrice.Clear();
-            txtStock.Clear();
-            txtSupplier_Id.Clear();
+            txtStock.Clear(); 
         }
         private void txtName_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -44,8 +46,8 @@ namespace TUGASWPF
 
         private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
-            var supplier = myContext.Suppliers.Find(Convert.ToInt32(txtSupplier_Id.Text)); 
-            if (txtName.Text.Equals(""))
+            var supplier = myContext.Suppliers.Find(Convert.ToInt32(cbSupp)); 
+            if (txtName.Text.Equals("") || supplier == null)
             {
                 MessageBox.Show("Input cant be null");
             }
@@ -79,7 +81,7 @@ namespace TUGASWPF
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    var supplier = myContext.Suppliers.Find(Convert.ToInt32(txtSupplier_Id.Text));
+                    var supplier = myContext.Suppliers.Find(Convert.ToInt32(cbSupp));
                     int Id = Convert.ToInt32(txtId.Text);
                     var Item = myContext.Item.Find(Id);
                     Item.Name = txtName.Text;
@@ -139,8 +141,8 @@ namespace TUGASWPF
                     txtName.Text = item.Name;
                     txtId.Text = Convert.ToString(item.Id);
                     txtPrice.Text = Convert.ToString(item.Price);
-                    txtStock.Text = Convert.ToString(item.Stock);
-                    txtSupplier_Id.Text = Convert.ToString(item.Supplier.Id);
+                    txtStock.Text = Convert.ToString(item.Stock); 
+                    cbSupplier.Text = item.Supplier.Name;
                 }
             }
         }
@@ -180,9 +182,9 @@ namespace TUGASWPF
 
         }
 
-        private void Cb_Supplier_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cbSupplier_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            cbSupp = Convert.ToInt32(cbSupplier.SelectedValue.ToString());
         }
     }
 }
