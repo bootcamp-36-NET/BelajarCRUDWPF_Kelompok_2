@@ -20,11 +20,11 @@
             <StackPanel Margin="10" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Foreground="Gray" FontSize="25" Text="Table : " />
-                    <TextBlock Text="Supplier" FontSize="25" Foreground="Black" Margin="5 0" FontWeight="Bold"/>
+                    <TextBlock Text="Transaction" FontSize="25" Foreground="Black" Margin="5 0" FontWeight="Bold"/>
                 </StackPanel>
             </StackPanel>
             <Border Grid.Row="1" BorderBrush="black" BorderThickness="1" Margin="10" CornerRadius="5" Height="400">
-                <DataGrid x:Name="dgTransaction" HorizontalAlignment="Left" Height="380" Margin="9,0,0,9" VerticalAlignment="Bottom" Width="549" SelectionChanged="dgSupplier_SelectionChanged" VerticalScrollBarVisibility="Visible" AutoGenerateColumns="False" IsReadOnly="True" Background="White">
+                <DataGrid x:Name="dgTransaction" HorizontalAlignment="Left" Height="380" Margin="9,0,0,9" VerticalAlignment="Bottom" Width="549" SelectionChanged="dgTransaction_SelectionChanged" VerticalScrollBarVisibility="Visible" AutoGenerateColumns="False" IsReadOnly="True" Background="White">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Transaction ID"
                                             Binding="{Binding Id}" Width="120"/>

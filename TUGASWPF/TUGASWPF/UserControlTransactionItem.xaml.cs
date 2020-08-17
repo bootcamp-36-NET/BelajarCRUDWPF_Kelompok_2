@@ -23,6 +23,7 @@ namespace TUGASWPF
     public partial class UserControlTransactionItem : UserControl
     {
         MyContext myContext = new MyContext();
+        int cbIt,cbTran;
         public UserControlTransactionItem()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace TUGASWPF
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        var input = new TransactionItem(txtQuantity.Text, transaction, item);
+                        var input = new TransactionItem();
                         myContext.TransactionItem.Add(input);
                         myContext.SaveChanges();
                         MessageBox.Show("1 row has benn inserted");
@@ -95,7 +96,7 @@ namespace TUGASWPF
                 case MessageBoxResult.Yes:
                     int Id = Convert.ToInt32(txtId.Text);
                     var transactionitem = myContext.TransactionItem.Find(Id);
-                    myContext.Item.Remove(transactionitem);
+                    myContext.TransactionItem.Remove(transactionitem);
                     myContext.SaveChanges();
                     MessageBox.Show("1 row has been deleted");
                     dgTransactionItem.ItemsSource = myContext.TransactionItem.ToList();
@@ -165,12 +166,13 @@ namespace TUGASWPF
 
         private void cbTransaction_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cbTransaction = Convert.ToInt32(cbTransaction.SelectedValue.ToString());
+            cbTran = Convert.ToInt32(cbTransaction.SelectedValue.ToString());
         }
 
         private void cbItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cbItem = Convert.ToInt32(cbItem.SelectedValue.ToString());
+            cbIt = Convert.ToInt32(cbItem.SelectedValue.ToString());
+
         }
     }
 }

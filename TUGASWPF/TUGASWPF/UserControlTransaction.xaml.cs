@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TUGASWPF.Contexts;
-using TUGASWPF.Model;
+using TUGASWPF.Models;
 
 namespace TUGASWPF
 {
@@ -27,7 +27,7 @@ namespace TUGASWPF
         public UserControlTransaction()
         {
             InitializeComponent();
-            dgTransaction.ItemsSource = myContext.Suppliers.ToList();
+            dgTransaction.ItemsSource = myContext.Transaction.ToList();
         }
 
         private void btnInsert_Click(object sender, RoutedEventArgs e)
@@ -42,7 +42,7 @@ namespace TUGASWPF
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        var input = new Transaction(txtId.Text, DpOrderDate.SelectedDate);
+                        var input = new Transaction();
                         myContext.Transaction.Add(input);
                         myContext.SaveChanges();
                         MessageBox.Show("1 row has benn inserted");
@@ -82,20 +82,20 @@ namespace TUGASWPF
         {
             MessageBoxResult result = MessageBox.Show("Are you sure want to delete this data ?", "Delete Arlet!!!", MessageBoxButton.YesNo);
             var ii = Convert.ToInt32(txtId.Text);
-            var items = myContext.Item.Where(I => I.Transaction.Id == ii).ToList();
+            var trans = myContext.Transaction.Where(I => I.Transaction.Id == ii).ToList();
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    foreach (Item i in items)
+                    foreach (TransactionItem i in trans)
                     {
                         int iid = i.Id;
-                        var item = myContext.Item.Find(iid);
-                        myContext.Item.Remove(item);
+                        var item = myContext.Transaction.Find(iid);
+                        myContext.Transaction.Remove(trans);
                         myContext.SaveChanges();
                     }
                     int Id = Convert.ToInt32(txtId.Text);
-                    var supplier = myContext.Transaction.Find(Id);
-                    myContext.Transaction.Remove(supplier);
+                    var transaction = myContext.Transaction.Find(Id);
+                    myContext.Transaction.Remove(transaction);
                     myContext.SaveChanges();
                     MessageBox.Show("1 row has been deleted");
                     dgTransaction.ItemsSource = myContext.Transaction.ToList();
@@ -116,7 +116,7 @@ namespace TUGASWPF
         {
             if (dgTransaction.SelectedItem != null)
             {
-                var transaction = dgTransaction.SelectedItem as Supplier;
+                var transaction = dgTransaction.SelectedItem as Transaction;
                 txtId.Text = Convert.ToString(transaction.Id);
                 DpOrderDate.SelectedDate = transaction.OrderDate;
             }

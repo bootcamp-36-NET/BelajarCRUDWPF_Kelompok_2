@@ -20,7 +20,7 @@
             <StackPanel Margin="10" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Foreground="Gray" FontSize="25" Text="Table : " />
-                    <TextBlock Text="Item" FontSize="25" Foreground="Black" Margin="5 0" FontWeight="Bold"/>
+                    <TextBlock Text="TransactionItem" FontSize="25" Foreground="Black" Margin="5 0" FontWeight="Bold"/>
                 </StackPanel>
             </StackPanel>
             <Border Grid.Row="1" BorderBrush="black" BorderThickness="1" Margin="10" CornerRadius="5" Height="400">
@@ -30,9 +30,9 @@
                                             Binding="{Binding Id}" Width="100"/>
                         <DataGridTextColumn Header="Quantity"
                                             Binding="{Binding Quantity}" Width="100"/>
-                        <DataGridTextColumn Header="Stock"
-                                            Binding="{Binding Transaction.Id}" Width="80"/>
-                        <DataGridTextColumn Header="Supplier"
+                        <DataGridTextColumn Header="Transaction ID"
+                                            Binding="{Binding Transaction.Id}" Width="120"/>
+                        <DataGridTextColumn Header="Item ID"
                                             Binding="{Binding Item.Id}" Width="100"/>
                         <DataGridTemplateColumn Header="Action">
                             <DataGridTemplateColumn.CellTemplate>
@@ -59,10 +59,10 @@
                 <TextBox x:Name="txtQuantity" materialDesign:HintAssist.Hint="Quantity" PreviewTextInput="txtPrice_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,300,0,152" HorizontalAlignment="Left" Width="350" SelectionBrush="Black" Foreground="#FF363636"  />
             </StackPanel>
             <StackPanel>
-                <ComboBox x:Name="cbTransaction" ItemsSource="{Binding Transaction}" DisplayMemberPath="Name" SelectedValuePath="Id"  HorizontalAlignment="Left" Margin="83,350,0,152" VerticalAlignment="Top" Width="275" Height="30" SelectionChanged="cbSupplier_SelectionChanged" Foreground="Black" FontFamily="Roboto Light"/>
+                <ComboBox x:Name="cbTransaction" ItemsSource="{Binding Transaction}" DisplayMemberPath="Name" SelectedValuePath="Id"  HorizontalAlignment="Left" Margin="83,350,0,152" VerticalAlignment="Top" Width="275" Height="30" SelectionChanged="cbTransaction_SelectionChanged" Foreground="Black" FontFamily="Roboto Light"/>
             </StackPanel>
             <StackPanel>
-                <ComboBox x:Name="cbItem" ItemsSource="{Binding Item}" DisplayMemberPath="Name" SelectedValuePath="Id"  HorizontalAlignment="Left" Margin="83,400,0,0" VerticalAlignment="Top" Width="275" Height="30" SelectionChanged="cbSupplier_SelectionChanged" Foreground="Black" FontFamily="Roboto Light"/>
+                <ComboBox x:Name="cbItem" ItemsSource="{Binding Item}" DisplayMemberPath="Name" SelectedValuePath="Id"  HorizontalAlignment="Left" Margin="83,400,0,0" VerticalAlignment="Top" Width="275" Height="30" SelectionChanged="cbItem_SelectionChanged" Foreground="Black" FontFamily="Roboto Light"/>
             </StackPanel>
             <StackPanel>
                 <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Center" VerticalAlignment="Top" Width="88" Background="#FF363636" Margin="271,450,62,216" Click="btnRefresh_Click"/>
