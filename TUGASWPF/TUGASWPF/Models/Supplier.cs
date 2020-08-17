@@ -27,6 +27,10 @@ namespace TUGASWPF.Models
             this.Name = name;
             this.JoinDate = joinDate;
         }
+        public int getId()
+        {
+            return this.Id;
+        }
     }
     
 }
