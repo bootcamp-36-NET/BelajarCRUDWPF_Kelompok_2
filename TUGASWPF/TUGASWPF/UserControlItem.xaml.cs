@@ -37,7 +37,8 @@ namespace TUGASWPF
             txtId.Clear();
             txtName.Clear();
             txtPrice.Clear();
-            txtStock.Clear(); 
+            txtStock.Clear();
+            cbSupplier.SelectedValue = null; 
         }
         private void txtName_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

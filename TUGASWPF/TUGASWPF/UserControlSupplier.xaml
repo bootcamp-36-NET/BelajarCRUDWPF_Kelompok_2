@@ -48,7 +48,7 @@
                 <TextBox x:Name="txtSearch" materialDesign:HintAssist.Hint="Search" PreviewTextInput="txtSearch_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,90,0,152" HorizontalAlignment="Left" Width="350" Foreground="#FF363636"  />
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="88" Background="#FF363636" Margin="190,150,0,216" Click="btnSearch_Click"/>
+                <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="88" Background="#FF363636" Margin="272,150,61,216" Click="btnSearch_Click"/>
             </StackPanel>
             <StackPanel>
                 <TextBox x:Name="txtId" materialDesign:HintAssist.Hint="Supplier ID" PreviewTextInput="txtId_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,229,0,152" HorizontalAlignment="Left" Width="350" IsReadOnly="True" Foreground="#FF363636" />
@@ -57,16 +57,16 @@
                 <TextBox x:Name="txtName" materialDesign:HintAssist.Hint="Supplier Name" PreviewTextInput="txtName_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,270,0,152" HorizontalAlignment="Left" Width="350" SelectionBrush="Black" Foreground="#FF363636"  />
             </StackPanel>
             <StackPanel Orientation="Vertical">
-                <DatePicker x:Name="DpJoinDate" Margin="90,330,81,216" Text="Date" Foreground="Black"></DatePicker>
+                <DatePicker x:Name="DpJoinDate" Margin="90,330,62,216" Text="Date" Foreground="Black"></DatePicker>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Join Date :" Margin="10,330,334,216" FontSize="16" Foreground="#FF363636"></TextBlock>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Center" VerticalAlignment="Top" Width="88" Background="#FF363636" Margin="266,370,85,216" Click="btnRefresh_Click"/>
+                <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Center" VerticalAlignment="Top" Width="88" Background="#FF363636" Margin="272,370,61,216" Click="btnRefresh_Click"/>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="130,370,0,216" VerticalAlignment="Top" Width="88" Click="btnUpdate_Click" Background="#FF363636" />
+                <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="142,370,0,216" VerticalAlignment="Top" Width="88" Click="btnUpdate_Click" Background="#FF363636" />
             </StackPanel>
             <StackPanel>
                 <Button x:Name="btnInsert" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Click="btnInsert_Click" Background="#FF363636" Margin="10,370,0,216"/>

@@ -52,7 +52,7 @@
                 <TextBox x:Name="txtSearch" materialDesign:HintAssist.Hint="Search" PreviewTextInput="txtSearch_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,90,0,152" HorizontalAlignment="Left" Width="350" Foreground="#FF363636"  />
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="88" Background="#FF363636" Margin="190,150,0,216" Click="btnSearch_Click"/>
+                <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="88" Background="#FF363636" Margin="272,150,61,216" Click="btnSearch_Click"/>
             </StackPanel>
             <StackPanel>
                 <TextBox x:Name="txtId" materialDesign:HintAssist.Hint="Item ID" PreviewTextInput="txtId_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,230,0,152" HorizontalAlignment="Left" Width="350" IsReadOnly="True" Foreground="#FF363636" />
@@ -70,13 +70,13 @@
                 <ComboBox x:Name="cbSupplier" ItemsSource="{Binding Supplier}" DisplayMemberPath="Name" SelectedValuePath="Id"  HorizontalAlignment="Left" Margin="83,400,0,0" VerticalAlignment="Top" Width="275" Height="30" SelectionChanged="cbSupplier_SelectionChanged" Foreground="Black" FontFamily="Roboto Light"/>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Center" VerticalAlignment="Top" Width="88" Background="#FF363636" Margin="266,450,85,216" Click="btnRefresh_Click"/>
+                <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Center" VerticalAlignment="Top" Width="88" Background="#FF363636" Margin="271,450,62,216" Click="btnRefresh_Click"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Supplier :" Margin="10,400,341,216" FontSize="16" Foreground="#FF363636"></TextBlock>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="130,450,0,216" VerticalAlignment="Top" Width="88" Click="btnUpdate_Click" Background="#FF363636" />
+                <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="144,450,0,216" VerticalAlignment="Top" Width="88" Click="btnUpdate_Click" Background="#FF363636" />
             </StackPanel>
             <StackPanel>
                 <Button x:Name="btnInsert" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Click="btnInsert_Click" Background="#FF363636" Margin="10,450,0,216"/>
