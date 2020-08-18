@@ -23,20 +23,28 @@ namespace TUGASWPF
     public partial class UserControlTransactionItem : UserControl
     {
         MyContext myContext = new MyContext();
-        int cbIt,cbTran;
+        int cbTrans;
+        int cbItems;
         public UserControlTransactionItem()
         {
             InitializeComponent();
             dgTransactionItem.ItemsSource = myContext.TransactionItem.ToList();
-            cbTransaction.ItemsSource = myContext.Transaction.ToList();
-            cbItem.ItemsSource = myContext.Item.ToList();
+            cbTransaction.ItemsSource = myContext.Transaction.Select(i => i.Id ).ToList();
+            cbItem.ItemsSource = myContext.Item.ToList(); 
         }
 
+        private void clearText()
+        {
+            txtId.Clear();
+            txtQuantity.Clear();
+            cbTransaction.SelectedValue = null;
+            cbItem.SelectedValue = null;
+        }
 
         private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
-            var transaction = myContext.TransactionItem.Find(Convert.ToInt32(cbTransaction));
-            var item = myContext.Item.Find(Convert.ToInt32(cbTransaction));
+            var transaction = myContext.Transaction.Find(Convert.ToInt32(cbTrans));
+            var item = myContext.Item.Find(Convert.ToInt32(cbTrans));
             if (txtQuantity.Text.Equals("") || transaction == null || item == null)
             {
                 MessageBox.Show("Input cant be null");
@@ -47,11 +55,11 @@ namespace TUGASWPF
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        var input = new TransactionItem();
+                        var input = new TransactionItem(Convert.ToInt32(txtQuantity.Text), transaction, item);
                         myContext.TransactionItem.Add(input);
                         myContext.SaveChanges();
                         MessageBox.Show("1 row has benn inserted");
-
+                 
                         dgTransactionItem.ItemsSource = myContext.TransactionItem.ToList();
                         break;
                     case MessageBoxResult.No:
@@ -70,8 +78,8 @@ namespace TUGASWPF
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    var item = myContext.Item.Find(Convert.ToInt32(cbItem));
-                    var transaction = myContext.Transaction.Find(Convert.ToInt32(cbTransaction));
+                    var transaction = myContext.Transaction.Find(Convert.ToInt32(cbTrans));
+                    var item = myContext.Item.Find(Convert.ToInt32(cbTrans));
                     int Id = Convert.ToInt32(txtId.Text);
                     var TransactionItem = myContext.TransactionItem.Find(Id);
                     TransactionItem.Quantity = Convert.ToInt32(txtQuantity.Text);
@@ -80,6 +88,7 @@ namespace TUGASWPF
                     myContext.SaveChanges();
                     MessageBox.Show("1 row has been updated");
                     dgTransactionItem.ItemsSource = myContext.TransactionItem.ToList();
+                    this.clearText();
                     break;
                 case MessageBoxResult.No:
                     MessageBox.Show("Wrong Input Data");
@@ -100,6 +109,7 @@ namespace TUGASWPF
                     myContext.SaveChanges();
                     MessageBox.Show("1 row has been deleted");
                     dgTransactionItem.ItemsSource = myContext.TransactionItem.ToList();
+                    this.clearText();
                     break;
                 case MessageBoxResult.No:
                     break;
@@ -111,26 +121,7 @@ namespace TUGASWPF
         {
 
         }
-
-        private void dgTransactionItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var transactionitem = dgTransactionItem.SelectedItem as TransactionItem;
-            if (dgTransactionItem.SelectedItem != null)
-            {
-                if (transactionitem.Item == null)
-                {
-
-                    txtQuantity.Text = Convert.ToString(transactionitem.Quantity);
-                    txtId.Text = Convert.ToString(transactionitem.Id);
-                }
-                else
-                {
-                    txtQuantity.Text = Convert.ToString(transactionitem.Quantity);
-                    txtId.Text = Convert.ToString(transactionitem.Id);
-                    cbTransaction.Text = transactionitem.Transaction.Id;
-                }
-            }
-        }
+        
 
         private void TabablzControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -147,7 +138,10 @@ namespace TUGASWPF
             var filteredData = myContext.TransactionItem.Where(Q => Q.Id.ToString().Contains(txtSearch.Text) || Q.Quantity.ToString().Contains(txtSearch.Text)).ToList();
             dgTransactionItem.ItemsSource = filteredData;
         }
-
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            this.clearText();
+        }
 
         private void txtPrice_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -163,25 +157,44 @@ namespace TUGASWPF
         {
 
         }
+         
+
+        private void cbItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cbItems = Convert.ToInt32(cbItem.SelectedValue.ToString());
+        }
 
         private void cbTransaction_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cbTran = Convert.ToInt32(cbTransaction.SelectedValue.ToString());
+            cbTrans = Convert.ToInt32(cbTransaction.SelectedValue.ToString());
         }
 
         private void dgTransactionItem_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
+            var transactionitem = dgTransactionItem.SelectedItem as TransactionItem;
+            if (dgTransactionItem.SelectedItem != null)
+            {
+                if (transactionitem.Transaction == null)
+                {
 
+                    txtId.Text = Convert.ToString(transactionitem.Id);
+                    txtQuantity.Text = Convert.ToString(transactionitem.Quantity);
+                }
+                else
+                {
+                    txtId.Text = Convert.ToString(transactionitem.Id);
+                    txtQuantity.Text = Convert.ToString(transactionitem.Quantity);
+                }
+            }
         }
 
-        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        private void txtQuantity_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
 
         }
 
-        private void cbItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void txtQuantity_TextChanged(object sender, TextChangedEventArgs e)
         {
-            cbIt = Convert.ToInt32(cbItem.SelectedValue.ToString());
 
         }
     }

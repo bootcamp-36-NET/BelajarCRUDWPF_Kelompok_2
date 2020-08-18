@@ -39,8 +39,7 @@
             <Button HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click">
                 <materialDesign:PackIcon Kind="Power"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Design com WPF</TextBlock>
-
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Tugas WPF Bootcamp .Net</TextBlock> 
         </Grid>
         <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF363636">
             <Grid.Effect>
@@ -69,25 +68,25 @@
                     <ListViewItem x:Name="Supplier" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Person" Height="25" Width="25" Margin="10" Foreground="White"/>
-                            <TextBlock Text="Supplier" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Supplier" VerticalAlignment="Center" Margin="20 10" Foreground="White"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Item" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="GearBox" Height="25" Width="25" Margin="10" Foreground="White"/>
-                            <TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10" Foreground="White"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="Transaction" Height="60">
+                    <ListViewItem x:Name="Transaction"  Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10" Foreground="White"/>
-                            <TextBlock Text="Transaction" VerticalAlignment="Center"  Margin="20 10"/>
+                            <TextBlock Text="Tickets" VerticalAlignment="Center"  Margin="20 10" Foreground="White"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="TransactionItem" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10" Foreground="White"/>
-                            <TextBlock Text="TransactionItem" VerticalAlignment="Center"  Margin="20 10"/>
+                            <TextBlock Text="Messages" VerticalAlignment="Center"  Margin="20 10" Foreground="White"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

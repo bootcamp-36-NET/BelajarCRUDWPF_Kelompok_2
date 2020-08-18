@@ -56,10 +56,10 @@
                 <TextBox x:Name="txtId" materialDesign:HintAssist.Hint="Transaction Item ID" PreviewTextInput="txtId_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,250,0,152" HorizontalAlignment="Left" Width="350" IsReadOnly="True" Foreground="#FF363636" />
             </StackPanel>
             <StackPanel>
-                <TextBox x:Name="txtQuantity" materialDesign:HintAssist.Hint="Quantity" PreviewTextInput="txtPrice_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,300,0,152" HorizontalAlignment="Left" Width="350" SelectionBrush="Black" Foreground="#FF363636"  />
+                <TextBox x:Name="txtQuantity" materialDesign:HintAssist.Hint="Quantity" PreviewTextInput="txtQuantity_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,300,0,152" HorizontalAlignment="Left" Width="350" SelectionBrush="Black" Foreground="#FF363636" TextChanged="txtQuantity_TextChanged"  />
             </StackPanel>
             <StackPanel>
-                <ComboBox x:Name="cbTransaction" ItemsSource="{Binding Transaction}" DisplayMemberPath="Name" SelectedValuePath="Id"  HorizontalAlignment="Left" Margin="83,350,0,152" VerticalAlignment="Top" Width="275" Height="30" SelectionChanged="cbTransaction_SelectionChanged" Foreground="Black" FontFamily="Roboto Light"/>
+                <ComboBox x:Name="cbTransaction"  HorizontalAlignment="Left" Margin="83,350,0,152" VerticalAlignment="Top" Width="275" Height="30" SelectionChanged="cbTransaction_SelectionChanged" Foreground="Black" FontFamily="Roboto Light"/>
             </StackPanel>
             <StackPanel>
                 <ComboBox x:Name="cbItem" ItemsSource="{Binding Item}" DisplayMemberPath="Name" SelectedValuePath="Id"  HorizontalAlignment="Left" Margin="83,400,0,0" VerticalAlignment="Top" Width="275" Height="30" SelectionChanged="cbItem_SelectionChanged" Foreground="Black" FontFamily="Roboto Light"/>

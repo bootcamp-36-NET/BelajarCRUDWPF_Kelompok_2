@@ -20,7 +20,7 @@ namespace TUGASWPF
     /// <summary>
     /// Interaction logic for UserControlTransaction.xaml
     /// </summary>
-    
+
     public partial class UserControlTransaction : UserControl
     {
         MyContext myContext = new MyContext();
@@ -32,31 +32,22 @@ namespace TUGASWPF
 
         private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
-            if (txtId.Text.Equals(""))
+            
+            MessageBoxResult result = MessageBox.Show("Are you sure want to Insert this data ?", "Insert Arlet!!!", MessageBoxButton.YesNo);
+            switch (result)
             {
-                MessageBox.Show("Input cant be null");
-            }
-            else
-            {
-                MessageBoxResult result = MessageBox.Show("Are you sure want to Insert this data ?", "Insert Arlet!!!", MessageBoxButton.YesNo);
-                switch (result)
-                {
-                    case MessageBoxResult.Yes:
-                        var input = new Transaction();
-                        myContext.Transaction.Add(input);
-                        myContext.SaveChanges();
-                        MessageBox.Show("1 row has benn inserted");
-                        txtId.Text = "";
-
-                        dgTransaction.ItemsSource = myContext.Transaction.ToList();
-                        break;
-                    case MessageBoxResult.No:
-                        break;
-                }
-
+                case MessageBoxResult.Yes:
+                    var input = new Transaction(DpOrderDate.SelectedDate);
+                    myContext.Transaction.Add(input);
+                    myContext.SaveChanges();
+                    MessageBox.Show("1 row has benn inserted");
+                   
+                    dgTransaction.ItemsSource = myContext.Transaction.ToList();
+                    break;
+                case MessageBoxResult.No:
+                    break;
             }
         }
-
 
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
@@ -66,7 +57,6 @@ namespace TUGASWPF
             {
                 case MessageBoxResult.Yes:
                     int Id = Convert.ToInt32(txtId.Text);
-                    var transaction = myContext.Transaction.Find(Id);
                     myContext.SaveChanges();
                     MessageBox.Show("1 row has been updated");
                     dgTransaction.ItemsSource = myContext.Transaction.ToList();
@@ -81,18 +71,10 @@ namespace TUGASWPF
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Are you sure want to delete this data ?", "Delete Arlet!!!", MessageBoxButton.YesNo);
-            var ii = Convert.ToInt32(txtId.Text);
-            var trans = myContext.TransactionItem.Where(I => I.Id.ToString().Contains(txtId.Text)).ToList();
+            
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    foreach (TransactionItem i in trans)
-                    {
-                        int iid = i.Id;
-                        var item = myContext.Transaction.Find(iid);
-                        myContext.Transaction.Remove(item);
-                        myContext.SaveChanges();
-                    }
                     int Id = Convert.ToInt32(txtId.Text);
                     var transaction = myContext.Transaction.Find(Id);
                     myContext.Transaction.Remove(transaction);
@@ -116,9 +98,9 @@ namespace TUGASWPF
         {
             if (dgTransaction.SelectedItem != null)
             {
-                var transaction = dgTransaction.SelectedItem as Transaction;
-                txtId.Text = Convert.ToString(transaction.Id);
-                DpOrderDate.SelectedDate = transaction.OrderDate;
+                var supplier = dgTransaction.SelectedItem as Transaction;
+                txtId.Text = Convert.ToString(supplier.Id);
+                DpOrderDate.SelectedDate = supplier.OrderDate;
             }
         }
 
@@ -134,7 +116,7 @@ namespace TUGASWPF
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            var filteredData = myContext.Transaction.Where(Q => Q.Id.ToString().Contains(txtSearch.Text) );
+            var filteredData = myContext.Suppliers.Where(Q => Q.Id.ToString().Contains(txtSearch.Text)).ToList(); ;
             dgTransaction.ItemsSource = filteredData;
         }
         private void btnRefresh_Click(object sender, RoutedEventArgs e)

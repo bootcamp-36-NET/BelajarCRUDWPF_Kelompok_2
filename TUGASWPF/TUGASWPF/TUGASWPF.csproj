@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D74C6789-F99F-420A-A3ED-B950871B9C80}</ProjectGuid>
+    <ProjectGuid>{07262742-8A67-4333-9D70-08392EE283C9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TUGASWPF</RootNamespace>
     <AssemblyName>TUGASWPF</AssemblyName>
@@ -70,6 +70,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\202008180416301_InitTable.cs" />
+    <Compile Include="Migrations\202008180416301_InitTable.designer.cs">
+      <DependentUpon>202008180416301_InitTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\TransactionItem.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="UserControlItem.xaml.cs">
+      <DependentUpon>UserControlItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSupplier.xaml.cs">
+      <DependentUpon>UserControlSupplier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTransaction.xaml.cs">
+      <DependentUpon>UserControlTransaction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTransactionItem.xaml.cs">
+      <DependentUpon>UserControlTransactionItem.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -83,17 +102,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControlItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSupplier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTransaction.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControlTransactionItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202008162055584_InitTable.cs" />
-    <Compile Include="Migrations\202008162055584_InitTable.designer.cs">
-      <DependentUpon>202008162055584_InitTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Item.cs" />
-    <Compile Include="Model\Supplier.cs" />
-    <Compile Include="Model\Transaction.cs" />
-    <Compile Include="Model\TransactionItem.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,8 +135,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202008162055584_InitTable.resx">
-      <DependentUpon>202008162055584_InitTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008180416301_InitTable.resx">
+      <DependentUpon>202008180416301_InitTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,6 +151,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
