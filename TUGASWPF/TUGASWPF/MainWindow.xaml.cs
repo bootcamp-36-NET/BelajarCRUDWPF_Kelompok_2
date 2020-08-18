@@ -59,6 +59,7 @@ namespace TUGASWPF
                 case "TransactionItem":
                     usc = new UserControlTransactionItem();
                     GridMain.Children.Add(usc);
+                    break;
                 default:
                     break;
             }

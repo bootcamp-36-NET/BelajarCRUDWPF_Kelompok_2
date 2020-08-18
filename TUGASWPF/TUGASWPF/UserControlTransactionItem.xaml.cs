@@ -169,6 +169,16 @@ namespace TUGASWPF
             cbTran = Convert.ToInt32(cbTransaction.SelectedValue.ToString());
         }
 
+        private void dgTransactionItem_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void cbItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             cbIt = Convert.ToInt32(cbItem.SelectedValue.ToString());
