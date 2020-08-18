@@ -70,11 +70,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\202008180416301_InitTable.cs" />
+    <Compile Include="Migrations\202008180416301_InitTable.designer.cs">
+      <DependentUpon>202008180416301_InitTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\TransactionItem.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="UserControlItem.xaml.cs">
       <DependentUpon>UserControlItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlSupplier.xaml.cs">
       <DependentUpon>UserControlSupplier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTransaction.xaml.cs">
+      <DependentUpon>UserControlTransaction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTransactionItem.xaml.cs">
+      <DependentUpon>UserControlTransactionItem.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -97,13 +110,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlTransaction.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControlTransactionItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202008161908098_InitTable.cs" />
-    <Compile Include="Migrations\202008161908098_InitTable.designer.cs">
-      <DependentUpon>202008161908098_InitTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -119,8 +135,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202008161908098_InitTable.resx">
-      <DependentUpon>202008161908098_InitTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008180416301_InitTable.resx">
+      <DependentUpon>202008180416301_InitTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

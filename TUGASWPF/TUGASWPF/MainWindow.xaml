@@ -77,13 +77,13 @@
                             <TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10" Foreground="White"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60">
+                    <ListViewItem x:Name="Transaction"  Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10" Foreground="White"/>
                             <TextBlock Text="Tickets" VerticalAlignment="Center"  Margin="20 10" Foreground="White"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60">
+                    <ListViewItem x:Name="TransactionItem" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10" Foreground="White"/>
                             <TextBlock Text="Messages" VerticalAlignment="Center"  Margin="20 10" Foreground="White"/>
