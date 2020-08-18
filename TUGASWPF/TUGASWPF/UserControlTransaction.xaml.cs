@@ -82,7 +82,7 @@ namespace TUGASWPF
         {
             MessageBoxResult result = MessageBox.Show("Are you sure want to delete this data ?", "Delete Arlet!!!", MessageBoxButton.YesNo);
             var ii = Convert.ToInt32(txtId.Text);
-            var trans = myContext.Transaction.Where(I => I.Transaction.Id == ii).ToList();
+            var trans = myContext.TransactionItem.Where(I => I.Id.ToString().Contains(txtId.Text)).ToList();
             switch (result)
             {
                 case MessageBoxResult.Yes:
@@ -90,7 +90,7 @@ namespace TUGASWPF
                     {
                         int iid = i.Id;
                         var item = myContext.Transaction.Find(iid);
-                        myContext.Transaction.Remove(trans);
+                        myContext.Transaction.Remove(item);
                         myContext.SaveChanges();
                     }
                     int Id = Convert.ToInt32(txtId.Text);
